@@ -22,6 +22,7 @@ html, body
   grid-template-columns: auto auto auto;
   background-color: #2196F3;
   padding: 2px;
+  visibility: hidden;
 }
 
 .grid-item

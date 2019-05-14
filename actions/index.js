@@ -6,6 +6,7 @@ const ui = require(path.resolve('actions/ui'))
 const { RELOAD_DB, SAVE_LIST } = require(path.resolve('actions/types'))
 
 var db = null
+var selectedArmies = -1
 
 ipcRenderer.on(SAVE_LIST, (event) => {
     console.log("SAVE LIST")
@@ -26,7 +27,7 @@ function loadDB()
 function main()
 {
     db = loadDB()
-    ui.pageBuilder(db)
+    ui.selectArmyWidget()
 }
 
 document.addEventListener('DOMContentLoaded', main);
