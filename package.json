@@ -4,12 +4,17 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-	"start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron .",
+    "buildWin": "electron-packager . woeab --platform win32 --arch x64 --out dist/",
+    "buildLinux": "electron-packager . woeab --platform linux --arch x64 --out dist/",
+    "setup": "electron-installer-windows --src dist/app-win32-x64/ --dest dist/installers/"
   },
   "author": "Bartosz Skorupa",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^5.0.1"
+    "electron": "^5.0.1",
+    "electron-installer-windows": "*",
+    "electron-packager": "^13.1.1",
+    "electron-prebuilt": "*"
   }
 }
