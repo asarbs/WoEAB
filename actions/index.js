@@ -5,6 +5,8 @@ const ui = require(path.resolve('actions/ui'))
 
 const { RELOAD_DB, SAVE_LIST } = require(path.resolve('actions/types'))
 
+var db = null
+
 ipcRenderer.on(SAVE_LIST, (event) => {
     console.log("SAVE LIST")
 });
@@ -13,7 +15,19 @@ ipcRenderer.on(RELOAD_DB, (event) => {
     console.log("RELOAD_DB")
 });
 
+function loadDB()
+{
+    let rawData = fs.readFileSync('db.json');
+    let db = JSON.parse(rawData);
+    return db
+}
 
 
-document.addEventListener('DOMContentLoaded', ui.pageBuilder);
+function main()
+{
+    db = loadDB()
+    ui.pageBuilder(db)
+}
+
+document.addEventListener('DOMContentLoaded', main);
 

@@ -9,6 +9,13 @@ html, body
 }
 
 
+#select_army
+{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px; 
+}
+
 #main
 {
   display: grid;
