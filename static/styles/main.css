@@ -7,3 +7,22 @@ html, body
 	font-family: 'Open Sans', sans-serif;
     color: #26303B;
 }
+
+
+#main
+{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 2px;
+}
+
+.grid-item
+{
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 2px;
+  font-size: 30px;
+  text-align: center;
+}
+  
